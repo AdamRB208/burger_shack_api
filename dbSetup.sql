@@ -12,13 +12,17 @@ CREATE TABLE burgers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name TINYTEXT NOT NULL,
     price TINYINT UNSIGNED NOT NULL
-);
+) DEFAULT CHARSET utf8mb4;
 
 DROP TABLE burgers;
 
 INSERT INTO
     burgers (name, price)
-VALUES ('Cheese Burger', 5)
-VALUES ('Bacon Cheese Burger', 7)
-VALUES ('Hamburger', 4.5)
-VALUES ('Double Cheese Burger', 7.5)
+VALUES ('Cheese Burger', 5),
+    ('Bacon Cheese Burger', 7),
+    ('Hamburger', 4),
+    ('Double Cheese Burger', 8);
+
+DELETE FROM burgers WHERE id = 1;
+
+SELECT name FROM burgers;
