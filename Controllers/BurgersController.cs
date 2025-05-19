@@ -4,7 +4,7 @@ namespace burger_shack_api.Controllers;
 [Route("api/burgers")]
 public class BurgersController : ControllerBase
 {
-  [HttpGet]
+  [HttpGet("test")]
   public string Test()
   {
     return "Burgers Controller is running";
