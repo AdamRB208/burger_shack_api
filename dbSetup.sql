@@ -12,6 +12,13 @@ CREATE TABLE burgers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name TINYTEXT NOT NULL,
     price TINYINT UNSIGNED NOT NULL
-)
+);
 
 DROP TABLE burgers;
+
+INSERT INTO
+    burgers (name, price)
+VALUES ('Cheese Burger', 5)
+VALUES ('Bacon Cheese Burger', 7)
+VALUES ('Hamburger', 4.5)
+VALUES ('Double Cheese Burger', 7.5)
