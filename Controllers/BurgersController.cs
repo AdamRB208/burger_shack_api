@@ -31,4 +31,18 @@ public class BurgersController : ControllerBase
       return BadRequest(error.Message);
     }
   }
+
+  [HttpGet("{burgerId}")]
+  public ActionResult<Burger> GetBurgerById(string burgerId)
+  {
+    try
+    {
+      Burger burger = _burgersService.GetBurgerById(burgerId);
+      return Ok(burger);
+    }
+    catch (Exception error)
+    {
+      return BadRequest(error.Message);
+    }
+  }
 }

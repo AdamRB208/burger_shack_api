@@ -26,3 +26,5 @@ VALUES ('Cheese Burger', 5.00),
 DELETE FROM burgers WHERE id = 1;
 
 SELECT * FROM burgers;
+
+SELECT * FROM burgers WHERE id = 1;

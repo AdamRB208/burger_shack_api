@@ -1,3 +1,4 @@
+
 namespace burger_shack_api.Services;
 
 public class BurgersService
@@ -14,5 +15,11 @@ public class BurgersService
   {
     List<Burger> burgers = _burgersRepository.GetAllBurgers();
     return burgers;
+  }
+
+  public Burger GetBurgerById(string burgerId)
+  {
+    Burger burger = _burgersRepository.GetBurgersById(burgerId);
+    return burger;
   }
 }

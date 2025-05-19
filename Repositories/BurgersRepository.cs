@@ -1,3 +1,4 @@
+
 namespace burger_shack_api.Repositories;
 
 public class BurgersRepository
@@ -15,5 +16,12 @@ public class BurgersRepository
     string sql = "SELECT * FROM burgers;";
     List<Burger> burgers = _db.Query<Burger>(sql).ToList();
     return burgers;
+  }
+
+  public Burger GetBurgersById(string burgerId)
+  {
+    string sql = $"SELECT * FROM burgers WHERE id = {burgerId};";
+    Burger burger = _db.Query<Burger>(sql).SingleOrDefault();
+    return burger;
   }
 }
