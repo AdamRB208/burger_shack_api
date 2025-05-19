@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    image: your-dockerhub-username/burger_shack_api:latest
+    restart: unless-stopped
+    env_file:
+      - burger_shack_api-env
+    ports:
+      - "7045:80"
