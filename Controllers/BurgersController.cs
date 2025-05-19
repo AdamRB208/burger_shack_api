@@ -9,4 +9,18 @@ public class BurgersController : ControllerBase
   {
     return "Burgers Controller is running";
   }
+
+  [HttpGet]
+  public ActionResult<List<Burger>> GetAllBurgers()
+  {
+    try
+    {
+      List<Burger> burgers = [];
+      return Ok(burgers);
+    }
+    catch (Exception error)
+    {
+      return BadRequest(error.Message);
+    }
+  }
 }
