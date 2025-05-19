@@ -7,3 +7,11 @@ CREATE TABLE IF NOT EXISTS accounts (
     email VARCHAR(255) UNIQUE COMMENT 'User Email',
     picture VARCHAR(255) COMMENT 'User Picture'
 ) default charset utf8mb4 COMMENT '';
+
+CREATE TABLE burgers (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name TINYTEXT NOT NULL,
+    price TINYINT UNSIGNED NOT NULL
+)
+
+DROP TABLE burgers;
