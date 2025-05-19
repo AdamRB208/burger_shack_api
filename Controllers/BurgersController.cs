@@ -33,7 +33,7 @@ public class BurgersController : ControllerBase
   }
 
   [HttpGet("{burgerId}")]
-  public ActionResult<Burger> GetBurgerById(string burgerId)
+  public ActionResult<Burger> GetBurgerById(int burgerId)
   {
     try
     {

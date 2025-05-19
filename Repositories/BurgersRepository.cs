@@ -18,10 +18,10 @@ public class BurgersRepository
     return burgers;
   }
 
-  public Burger GetBurgersById(string burgerId)
+  public Burger GetBurgersById(int burgerId)
   {
-    string sql = $"SELECT * FROM burgers WHERE id = {burgerId};";
-    Burger burger = _db.Query<Burger>(sql).SingleOrDefault();
+    string sql = "SELECT * FROM burgers WHERE id = @burgerId;";
+    Burger burger = _db.Query<Burger>(sql, new { burgerId = burgerId }).SingleOrDefault();
     return burger;
   }
 }

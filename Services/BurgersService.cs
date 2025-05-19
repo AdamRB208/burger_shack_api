@@ -17,9 +17,10 @@ public class BurgersService
     return burgers;
   }
 
-  public Burger GetBurgerById(string burgerId)
+  public Burger GetBurgerById(int burgerId)
   {
     Burger burger = _burgersRepository.GetBurgersById(burgerId);
+    if (burger == null) throw new Exception($"No burger with the id of {burgerId}.");
     return burger;
   }
 }
