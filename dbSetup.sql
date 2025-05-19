@@ -11,18 +11,18 @@ CREATE TABLE IF NOT EXISTS accounts (
 CREATE TABLE burgers (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name TINYTEXT NOT NULL,
-    price TINYINT UNSIGNED NOT NULL
+    price DECIMAL(19, 2) NOT NULL
 ) DEFAULT CHARSET utf8mb4;
 
 DROP TABLE burgers;
 
 INSERT INTO
     burgers (name, price)
-VALUES ('Cheese Burger', 5),
-    ('Bacon Cheese Burger', 7),
-    ('Hamburger', 4),
-    ('Double Cheese Burger', 8);
+VALUES ('Cheese Burger', 5.00),
+    ('Bacon Cheese Burger', 7.00),
+    ('Hamburger', 4.50),
+    ('Double Cheese Burger', 7.50);
 
 DELETE FROM burgers WHERE id = 1;
 
-SELECT name FROM burgers;
+SELECT * FROM burgers;
