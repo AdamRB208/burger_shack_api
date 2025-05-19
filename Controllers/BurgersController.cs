@@ -4,6 +4,14 @@ namespace burger_shack_api.Controllers;
 [Route("api/burgers")]
 public class BurgersController : ControllerBase
 {
+
+  public BurgersController(BurgersService burgersService)
+  {
+    _burgersService = burgersService;
+  }
+
+  private readonly BurgersService _burgersService;
+
   [HttpGet("test")]
   public string Test()
   {
@@ -15,7 +23,7 @@ public class BurgersController : ControllerBase
   {
     try
     {
-      List<Burger> burgers = [];
+      List<Burger> burgers = _burgersService.GetAllBurgers();
       return Ok(burgers);
     }
     catch (Exception error)
