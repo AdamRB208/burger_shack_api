@@ -24,9 +24,16 @@ public class BurgersService
     return burger;
   }
 
-  internal Burger CreateBurger(Burger burgerData)
+  public Burger CreateBurger(Burger burgerData)
   {
     Burger burger = _burgersRepository.CreateBurger(burgerData);
     return burger;
+  }
+
+  public string DeleteBurger(int burgerId)
+  {
+    Burger burger = GetBurgerById(burgerId);
+    _burgersRepository.DeleteBurger(burgerId);
+    return $"{burger.Name} was deleted!";
   }
 }

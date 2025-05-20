@@ -60,4 +60,18 @@ public class BurgersController : ControllerBase
       return BadRequest(error.Message);
     }
   }
+
+  [HttpDelete("{burgerId}")]
+  public ActionResult<string> DeleteBurger(int burgerId)
+  {
+    try
+    {
+      string message = _burgersService.DeleteBurger(burgerId);
+      return Ok(message);
+    }
+    catch (Exception error)
+    {
+      return BadRequest(error.Message);
+    }
+  }
 }
