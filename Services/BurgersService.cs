@@ -36,4 +36,10 @@ public class BurgersService
     _burgersRepository.DeleteBurger(burgerId);
     return $"{burger.Name} was deleted!";
   }
+
+  public Burger UpdateBurger(int burgerId, Burger burgerData)
+  {
+    Burger burger = _burgersRepository.UpdateBurger(burgerId, burgerData);
+    return burger;
+  }
 }

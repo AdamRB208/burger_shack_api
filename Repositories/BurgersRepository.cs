@@ -49,4 +49,15 @@ public class BurgersRepository
     if (rowsAffected > 1) throw new Exception("More than one row was deleted!");
 
   }
+
+  public Burger UpdateBurger(int burgerId, Burger burgerData)
+  {
+    string sql = @"INSERT INTO
+                  burgers (name, price)
+                  VALUES (@Name, @Price);
+                  SELECT * FROM burgers WHERE id = @burgerId;";
+
+    Burger burger = _db.Query<Burger>(sql, new { burgerId = burgerId }).SingleOrDefault();
+    return burger;
+  }
 }
