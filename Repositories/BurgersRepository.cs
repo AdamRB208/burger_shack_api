@@ -50,14 +50,16 @@ public class BurgersRepository
 
   }
 
-  public Burger UpdateBurger(int burgerId, Burger burgerData)
+  public Burger UpdateBurger(int Id, Burger burgerData)
   {
-    string sql = @"INSERT INTO
-                  burgers (name, price)
-                  VALUES (@Name, @Price);
-                  SELECT * FROM burgers WHERE id = @burgerId;";
+    string sql = @"UPDATE burgers
+                  SET name = @Name, price= @Price
+                  WHERE id = @Id;
+                  
+                  SELECT * FROM burgers WHERE id = @Id;";
 
-    Burger burger = _db.Query<Burger>(sql, new { burgerId = burgerId }).SingleOrDefault();
+    burgerData.Id = Id;
+    Burger burger = _db.Query<Burger>(sql, burgerData).SingleOrDefault();
     return burger;
   }
 }

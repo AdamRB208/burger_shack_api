@@ -75,12 +75,12 @@ public class BurgersController : ControllerBase
     }
   }
 
-  [HttpPut("{burgerId}")]
-  public ActionResult<Burger> UpdateBurger(int burgerId, [FromBody] Burger burgerData)
+  [HttpPut("{Id}")]
+  public ActionResult<Burger> UpdateBurger(int Id, [FromBody] Burger burgerData)
   {
     try
     {
-      Burger burger = _burgersService.UpdateBurger(burgerId, burgerData);
+      Burger burger = _burgersService.UpdateBurger(Id, burgerData);
       return Ok(burger);
     }
     catch (Exception error)
